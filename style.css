@@ -94,7 +94,7 @@ body {
 }
 
 .hero {
-  background: url('https://raw.githubusercontent.com/blazingror/leftover-chef/refs/heads/main/FrameImage.png') center/cover no-repeat;
+  background: url('https://raw.githubusercontent.com/blazingror/leftover-chef/main/FrameImage.png') center/cover no-repeat;
   height: 70vh;
   border-radius: 15px;
   overflow: hidden;
