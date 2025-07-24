@@ -11,10 +11,19 @@
     <header class="topbar">
       <div class="menu-btn">☰</div>
       <div class="nav-buttons">
-        <button></button><button></button><button></button><button></button>
-        <button></button><button></button><button></button><button></button>
-        <button></button><button></button><button></button><button></button>
-      </div>
+  <button data-section="home">Home</button>
+  <button data-section="recipes">Recipes</button>
+  <button data-section="tips">Tips</button>
+  <button data-section="about">About</button>
+  <button data-section="contact">Contact</button>
+  <button data-section="faq">FAQ</button>
+  <button data-section="settings">Settings</button>
+  <button data-section="blog">Blog</button>
+  <button data-section="gallery">Gallery</button>
+  <button data-section="videos">Videos</button>
+  <button data-section="news">News</button>
+  <button data-section="profile">Profile</button>
+</div>
       <input type="text" placeholder="Search" class="search-bar" />
     </header>
 
@@ -27,14 +36,18 @@
       </div>
     </div>
 
-    <main class="main-content">
-      <div class="hero">
-        <div class="overlay">
-          <h1>LEFTOVER CHEF</h1>
-          <p>Turn Leftovers into Tasty Creations</p>
-        </div>
-      </div>
-    </main>
+   <main class="main-content">
+  <div class="hero">
+    <div class="overlay">
+      <h1>LEFTOVER CHEF</h1>
+      <p>Turn Leftovers into Tasty Creations</p>
+    </div>
+  </div>
+
+  <div id="dynamic-content" class="dynamic-content">
+    <p>Welcome to Leftover Chef! Select a section above to explore more.</p>
+  </div>
+</main>
   </div>
 </body>
 </html>
