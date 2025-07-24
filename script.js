@@ -7,9 +7,10 @@ const sidebar = document.getElementById('sidebar');
 function updateView(section) {
   // Update active button
   navButtons.forEach(btn => btn.classList.remove('active'));
-  document.querySelector(`[data-section="${section}"]`).classList.add('active');
+  const activeBtn = document.querySelector(`[data-section="${section}"]`);
+  if (activeBtn) activeBtn.classList.add('active');
 
-  // Reset
+  // Reset content area and hero
   contentArea.innerHTML = '';
 
   if (section === 'home') {
@@ -32,4 +33,30 @@ function updateView(section) {
     hero.style.display = 'none';
     sidebar.classList.add('hidden');
     contentArea.innerHTML = `
-      <h2>About Leftover Chef</h
+      <h2>About Leftover Chef</h2>
+      <p>Leftover Chef was built to help reduce food waste while making cooking fun and resourceful. Our platform recommends meals based on ingredients you already have — helping you save time, money, and the planet.</p>
+      <br>
+      <p>Started in 2025 by a group of foodies and sustainability nerds, we believe every bite can make a difference.</p>
+    `;
+  } else if (section === 'contact') {
+    hero.style.display = 'none';
+    sidebar.classList.add('hidden');
+    contentArea.innerHTML = `
+      <div class="contact-frame">
+        <h2>Contact Us</h2>
+        <p>Coming soon: phone numbers, email, support channels.</p>
+      </div>
+    `;
+  }
+}
+
+// Attach click event to each nav button
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const section = button.getAttribute('data-section');
+    updateView(section);
+  });
+});
+
+// Set default view to home on load
+updateView('home');
