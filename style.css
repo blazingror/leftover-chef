@@ -19,13 +19,11 @@ body {
   padding: 20px;
 }
 
-/* === Top Bar === */
 .topbar {
   display: flex;
   align-items: center;
-  background: none;
-  padding: 10px 0;
   gap: 15px;
+  margin-bottom: 10px;
 }
 
 .menu-btn {
@@ -35,23 +33,18 @@ body {
   padding: 6px 12px;
   border-radius: 10px;
   color: #333;
-  transition: background 0.3s;
-}
-
-.menu-btn:hover {
-  background: #e6e6e6;
 }
 
 .nav-buttons {
   display: flex;
-  flex-grow: 1;
   gap: 10px;
   flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .nav-buttons button {
   height: 30px;
-  width: 60px;
+  padding: 0 15px;
   border-radius: 15px;
   background: #fbb650;
   border: none;
@@ -63,8 +56,13 @@ body {
   background: #ffa63b;
 }
 
+.nav-buttons button.active {
+  background: #ff8f1f;
+  color: #fff;
+}
+
 .search-bar {
-  height: 45px;
+  height: 35px;
   width: 150px;
   border-radius: 20px;
   border: none;
@@ -74,10 +72,10 @@ body {
   color: #333;
 }
 
-/* === Sidebar === */
+/* Sidebar */
 .sidebar {
   position: absolute;
-  top: 85px;
+  top: 80px;
   left: 20px;
   width: 170px;
   background-color: #fbb650;
@@ -85,6 +83,11 @@ body {
   border-radius: 25px;
   height: calc(100% - 100px);
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.hidden {
+  display: none;
 }
 
 .sidebar h2 {
@@ -114,23 +117,23 @@ body {
   transform: scale(1.05);
 }
 
-/* === Main Content === */
+/* Main Content */
 .main-content {
   margin-left: 200px;
   padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 }
 
 .hero {
   background: url('https://raw.githubusercontent.com/blazingror/leftover-chef/main/FrameImage.png') center/cover no-repeat;
-  flex-grow: 1;
+  flex-grow: 0;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  min-height: 400px;
 }
 
 .overlay {
@@ -143,24 +146,37 @@ body {
   justify-content: center;
 }
 
-.dynamic-content {
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  color: white;
-}
-
 .overlay h1 {
   font-size: 54px;
   font-weight: 600;
-  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
-.overlay p {
+.overlay .tagline {
   font-size: 22px;
-  font-weight: 400;
-  opacity: 0.9;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffcc7a;
+}
+
+.overlay .desc {
+  font-size: 16px;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.dynamic-content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+}
+
+/* Orange frame for Contact */
+.contact-frame {
+  border: 5px solid #fbb650;
+  padding: 60px;
+  border-radius: 20px;
+  background: rgba(255, 174, 60, 0.05);
+  text-align: center;
 }
