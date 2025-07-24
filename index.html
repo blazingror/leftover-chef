@@ -49,5 +49,31 @@
   </div>
 </main>
   </div>
+  <script>
+  const navButtons = document.querySelectorAll('.nav-buttons button');
+  const contentArea = document.getElementById('dynamic-content');
+
+  const contentMap = {
+    home: `<h2>Welcome</h2><p>Discover creative meals from your leftovers.</p>`,
+    recipes: `<h2>Recipes</h2><p>Browse recipes made from everyday leftovers.</p>`,
+    tips: `<h2>Cooking Tips</h2><p>Get smart tips to reduce food waste and cook efficiently.</p>`,
+    about: `<h2>About Us</h2><p>Leftover Chef is your partner in sustainable cooking.</p>`,
+    contact: `<h2>Contact</h2><p>Have questions? Reach out at hello@leftoverchef.com.</p>`,
+    faq: `<h2>FAQs</h2><p>Common questions about ingredients, storage, and more.</p>`,
+    settings: `<h2>Settings</h2><p>Customize your cooking experience here.</p>`,
+    blog: `<h2>Blog</h2><p>Read stories and cooking journeys from our users.</p>`,
+    gallery: `<h2>Gallery</h2><p>Feast your eyes on some visual kitchen magic.</p>`,
+    videos: `<h2>Video Tutorials</h2><p>Watch how to bring new life to leftovers.</p>`,
+    news: `<h2>Latest News</h2><p>Stay updated on app features and sustainability.</p>`,
+    profile: `<h2>Your Profile</h2><p>View saved recipes and your kitchen stats.</p>`
+  };
+
+  navButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const section = button.getAttribute('data-section');
+      contentArea.innerHTML = contentMap[section] || '<p>Content not found.</p>';
+    });
+  });
+</script>
 </body>
 </html>
