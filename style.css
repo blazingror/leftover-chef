@@ -13,7 +13,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  height: 100vh;
 }
 
 .topbar {
@@ -91,15 +91,18 @@ body {
   margin-left: 220px;
   padding: 20px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Makes content touch the bottom */
 }
 
 .hero {
   background: url('https://raw.githubusercontent.com/blazingror/leftover-chef/main/FrameImage.png') center/cover no-repeat;
-  height: 70vh;
+  flex-grow: 1; /* Let it grow to fill remaining space */
   border-radius: 15px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .overlay {
