@@ -8,19 +8,23 @@
 body {
   background-color: #1e1e1e;
   color: white;
+  background-image: url('https://raw.githubusercontent.com/blazingror/leftover-chef/main/pattern-bg.png');
+  background-size: 100px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding: 20px;
 }
 
+/* === Top Bar === */
 .topbar {
   display: flex;
   align-items: center;
-  background: #fbb650;
-  padding: 10px;
+  background: none;
+  padding: 10px 0;
   gap: 15px;
 }
 
@@ -30,46 +34,63 @@ body {
   background: white;
   padding: 6px 12px;
   border-radius: 10px;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.menu-btn:hover {
+  background: #e6e6e6;
 }
 
 .nav-buttons {
   display: flex;
   flex-grow: 1;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .nav-buttons button {
   height: 30px;
   width: 60px;
   border-radius: 15px;
-  background: white;
+  background: #fbb650;
   border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-buttons button:hover {
+  background: #ffa63b;
 }
 
 .search-bar {
-  height: 30px;
+  height: 35px;
+  width: 150px;
   border-radius: 20px;
   border: none;
   padding: 0 15px;
   font-size: 16px;
+  background: white;
+  color: #333;
 }
 
+/* === Sidebar === */
 .sidebar {
   position: absolute;
-  top: 60px;
-  left: 0;
-  width: 200px;
+  top: 85px;
+  left: 20px;
+  width: 170px;
   background-color: #fbb650;
   padding: 20px 10px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  height: calc(100% - 60px);
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  height: calc(100% - 100px);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: #333;
 }
 
 .resource-buttons {
@@ -79,34 +100,41 @@ body {
 }
 
 .resource-buttons button {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border: none;
   background: #ffa63b;
   border-radius: 15px;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
+.resource-buttons button:hover {
+  background: #ff8f1f;
+  transform: scale(1.05);
+}
+
+/* === Main Content === */
 .main-content {
-  margin-left: 220px;
+  margin-left: 200px;
   padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Makes content touch the bottom */
+  justify-content: flex-end;
 }
 
 .hero {
   background: url('https://raw.githubusercontent.com/blazingror/leftover-chef/main/FrameImage.png') center/cover no-repeat;
-  flex-grow: 1; /* Let it grow to fill remaining space */
-  border-radius: 15px;
+  flex-grow: 1;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .overlay {
-  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
   color: white;
   height: 100%;
   padding: 40px;
@@ -116,11 +144,14 @@ body {
 }
 
 .overlay h1 {
-  font-size: 48px;
+  font-size: 54px;
+  font-weight: 600;
+  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
 .overlay p {
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 400;
   opacity: 0.9;
 }
