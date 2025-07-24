@@ -11,23 +11,16 @@
     <header class="topbar">
       <div class="menu-btn">☰</div>
       <div class="nav-buttons">
-  <button data-section="home">Home</button>
-  <button data-section="recipes">Recipes</button>
-  <button data-section="tips">Tips</button>
-  <button data-section="about">About</button>
-  <button data-section="contact">Contact</button>
-  <button data-section="faq">FAQ</button>
-  <button data-section="settings">Settings</button>
-  <button data-section="blog">Blog</button>
-  <button data-section="gallery">Gallery</button>
-  <button data-section="videos">Videos</button>
-  <button data-section="news">News</button>
-  <button data-section="profile">Profile</button>
-</div>
+        <button data-section="home" class="active">Home</button>
+        <button data-section="recipes">Recipes</button>
+        <button data-section="about">About</button>
+        <button data-section="contact">Contact</button>
+      </div>
       <input type="text" placeholder="Search" class="search-bar" />
     </header>
 
-    <div class="sidebar">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
       <h2>RESOURCES</h2>
       <div class="resource-buttons">
         <button></button><button></button><button></button><button></button>
@@ -36,44 +29,21 @@
       </div>
     </div>
 
-   <main class="main-content">
-  <div class="hero">
-    <div class="overlay">
-      <h1>LEFTOVER CHEF</h1>
-      <p>Turn Leftovers into Tasty Creations</p>
-    </div>
+    <main class="main-content">
+      <!-- Hero Section -->
+      <div class="hero" id="hero">
+        <div class="overlay" id="hero-overlay">
+          <h1>LEFTOVER CHEF</h1>
+          <p class="tagline">Turn Leftovers into T-A-S-T-Y Creations!</p>
+          <p class="desc">Welcome to Leftover Chef – your guide to transforming everyday leftovers into extraordinary dishes. Start by exploring one of our most popular creations: <strong>Spiced Chickpea Curry!</strong></p>
+        </div>
+      </div>
+
+      <!-- Dynamic Content -->
+      <div id="dynamic-content" class="dynamic-content"></div>
+    </main>
   </div>
 
-  <div id="dynamic-content" class="dynamic-content">
-    <p>Welcome to Leftover Chef! Select a section above to explore more.</p>
-  </div>
-</main>
-  </div>
-  <script>
-  const navButtons = document.querySelectorAll('.nav-buttons button');
-  const contentArea = document.getElementById('dynamic-content');
-
-  const contentMap = {
-    home: `<h2>Welcome</h2><p>Discover creative meals from your leftovers.</p>`,
-    recipes: `<h2>Recipes</h2><p>Browse recipes made from everyday leftovers.</p>`,
-    tips: `<h2>Cooking Tips</h2><p>Get smart tips to reduce food waste and cook efficiently.</p>`,
-    about: `<h2>About Us</h2><p>Leftover Chef is your partner in sustainable cooking.</p>`,
-    contact: `<h2>Contact</h2><p>Have questions? Reach out at hello@leftoverchef.com.</p>`,
-    faq: `<h2>FAQs</h2><p>Common questions about ingredients, storage, and more.</p>`,
-    settings: `<h2>Settings</h2><p>Customize your cooking experience here.</p>`,
-    blog: `<h2>Blog</h2><p>Read stories and cooking journeys from our users.</p>`,
-    gallery: `<h2>Gallery</h2><p>Feast your eyes on some visual kitchen magic.</p>`,
-    videos: `<h2>Video Tutorials</h2><p>Watch how to bring new life to leftovers.</p>`,
-    news: `<h2>Latest News</h2><p>Stay updated on app features and sustainability.</p>`,
-    profile: `<h2>Your Profile</h2><p>View saved recipes and your kitchen stats.</p>`
-  };
-
-  navButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const section = button.getAttribute('data-section');
-      contentArea.innerHTML = contentMap[section] || '<p>Content not found.</p>';
-    });
-  });
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
