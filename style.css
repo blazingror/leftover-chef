@@ -133,7 +133,7 @@ body {
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  min-height: 900px;
+  min-height: 200px;
 }
 
 .overlay {
